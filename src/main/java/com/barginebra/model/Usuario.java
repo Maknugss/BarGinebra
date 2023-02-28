@@ -1,10 +1,13 @@
 package com.barginebra.model;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
 
 @Entity
+@Data
 @Table(name="usuario") //Creación de la tabla
 public class Usuario implements Serializable {
 
@@ -29,70 +32,4 @@ public class Usuario implements Serializable {
     @JoinColumn(name = "id_tipo_usuario")
     @ManyToMany
     private List<TipoUsuario> tipo_usuario;
-
-    public Long getId() {
-        return id;
-    }
-
-    public String getCorreo() {
-        return correo;
-    }
-
-    public void setCorreo(String correo) {
-        this.correo = correo;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getNombres() {
-        return nombres;
-    }
-
-    public void setNombres(String nombres) {
-        this.nombres = nombres;
-    }
-
-    public String getApellidos() {
-        return apellidos;
-    }
-
-    public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
-    }
-
-    public int getDocumento() {
-        return documento;
-    }
-
-    public void setDocumento(int documento) {
-        this.documento = documento;
-    }
-
-    public String getTipo_documento() {
-        return tipo_documento;
-    }
-
-    public void setTipo_documento(String tipo_documento) {
-        this.tipo_documento = tipo_documento;
-    }
-
-    public List<TipoUsuario> getTipo_usuario() {
-        return tipo_usuario;
-    }
-
-    public void setTipo_usuario(List<TipoUsuario> tipo_usuario) {
-        this.tipo_usuario = tipo_usuario;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-
-
-    }
 }
