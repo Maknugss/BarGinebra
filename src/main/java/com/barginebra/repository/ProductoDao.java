@@ -1,2 +1,5 @@
-package com.barginebra.repository;public class ProductoDao {
+package com.barginebra.repository;
+
+public interface
+ProductoDao {
 }

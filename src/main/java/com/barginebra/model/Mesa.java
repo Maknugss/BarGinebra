@@ -1,2 +1,4 @@
-package com.barginebra.model;public class Mesa {
+package com.barginebra.model;
+
+public class Mesa {
 }

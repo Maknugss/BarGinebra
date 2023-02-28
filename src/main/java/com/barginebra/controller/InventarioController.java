@@ -1,2 +1,4 @@
-package com.barginebra.controller;public class InventarioController {
+package com.barginebra.controller;
+
+public class InventarioController {
 }

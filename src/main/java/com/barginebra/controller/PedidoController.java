@@ -1,2 +1,4 @@
-package com.barginebra.controller;public class PedidoController {
+package com.barginebra.controller;
+
+public class PedidoController {
 }

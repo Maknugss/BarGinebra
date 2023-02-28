@@ -1,2 +1,4 @@
-package com.barginebra.service;public class PedidoService {
+package com.barginebra.service;
+
+public class PedidoService {
 }

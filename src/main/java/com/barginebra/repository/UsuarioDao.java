@@ -1,4 +1,4 @@
 package com.barginebra.repository;
 
-public class TrabajadorDao {
+public interface UsuarioDao {
 }

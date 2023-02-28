@@ -1,2 +1,4 @@
-package com.barginebra.repository;public class MesaDao {
+package com.barginebra.repository;
+
+public interface MesaDao {
 }

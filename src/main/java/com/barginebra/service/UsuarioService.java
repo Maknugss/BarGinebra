@@ -1,2 +1,4 @@
-package com.barginebra.service;public class UsuarioService {
+package com.barginebra.service;
+
+public class UsuarioService {
 }

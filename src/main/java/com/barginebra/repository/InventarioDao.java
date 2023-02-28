@@ -1,2 +1,4 @@
-package com.barginebra.repository;public class InventarioDao {
+package com.barginebra.repository;
+
+public interface InventarioDao {
 }

@@ -1,2 +1,4 @@
-package com.barginebra.controller;public class MesaController {
+package com.barginebra.controller;
+
+public class MesaController {
 }

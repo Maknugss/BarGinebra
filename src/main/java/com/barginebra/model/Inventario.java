@@ -1,2 +1,4 @@
-package com.barginebra.model;public class Inventario {
+package com.barginebra.model;
+
+public class Inventario {
 }

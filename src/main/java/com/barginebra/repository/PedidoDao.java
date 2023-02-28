@@ -1,2 +1,4 @@
-package com.barginebra.repository;public class PedidoDao {
+package com.barginebra.repository;
+
+public interface PedidoDao {
 }

@@ -1,2 +1,4 @@
-package com.barginebra.repository;public class TipoUsuarioDao {
+package com.barginebra.repository;
+
+public interface TipoUsuarioDao {
 }

@@ -1,2 +1,4 @@
-package com.barginebra.service;public class InventarioServicew {
+package com.barginebra.service;
+
+public class InventarioService {
 }
