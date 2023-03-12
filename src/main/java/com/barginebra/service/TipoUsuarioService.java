@@ -1,36 +1,40 @@
 package com.barginebra.service;
 
 import com.barginebra.model.TipoUsuario;
-import com.barginebra.model.Usuario;
 import com.barginebra.repository.TipoUsuarioDao;
 import com.barginebra.response.RespuestaPersonalizada;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
+
+import java.util.List;
+import java.util.Optional;
 
 @Service
 public class TipoUsuarioService {
     @Autowired
     TipoUsuarioDao tipoUsuarioDao;
 
-    public ResponseEntity<Object> guardarTipoUsuario(@RequestBody TipoUsuario TipoUsuariousuarioNuevo){
-        ResponseEntity<Object> respuesta;
-        try {
-            tipoUsuarioDao.save(TipoUsuariousuarioNuevo);
-            RespuestaPersonalizada res = new RespuestaPersonalizada("Creacion del tipo de usuario fue exitosa", HttpStatus.OK);
-            res.setObjetoRespuesta(TipoUsuariousuarioNuevo);
-            respuesta = ResponseEntity.ok(HttpStatus.OK);
-            respuesta = new ResponseEntity<>(res, HttpStatus.OK);
-        } catch (Exception e) {
-            // logger.error(e);
-            respuesta = ResponseEntity.ok(HttpStatus.BAD_REQUEST);
-            respuesta = new ResponseEntity<>(
-                    "Disculpa tenemos un error tratando de crear el tipo de usuario usuario",
-                    HttpStatus.BAD_REQUEST);
+    public TipoUsuario guardarTipoUsuario(@RequestBody TipoUsuario tipoUsuariousuarioNuevo){
+       return tipoUsuarioDao.save(tipoUsuariousuarioNuevo);
+    }
 
-        }
-        return respuesta;
+    public List<TipoUsuario> obtenerTipoUsuarios(){
+        return tipoUsuarioDao.findAll();
+    }
+
+    public List<TipoUsuario> obtenerTipoUsuarioId(@PathVariable int idTipoUsuario){
+       return tipoUsuarioDao.findById(idTipoUsuario);
+    }
+
+    public void eliminarTipoUsuarioId(@PathVariable int idTipoUsuario){
+        tipoUsuarioDao.deleteById(idTipoUsuario);
+    }
+
+    public TipoUsuario actualizarTipoUsuario(@RequestBody TipoUsuario tipoUsuarioActualizar) {
+        return tipoUsuarioDao.save(tipoUsuarioActualizar);
     }
 }
