@@ -1,12 +1,18 @@
 package com.barginebra.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 @Table(name="producto")
 public class Producto implements Serializable {
     private static final long serialVersionUID = 1L;
@@ -14,7 +20,7 @@ public class Producto implements Serializable {
     @Id
     @Column(name="id")
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private Long id;
+    private int id;
     @Column(name="nombre")
     private String nombre;
 
