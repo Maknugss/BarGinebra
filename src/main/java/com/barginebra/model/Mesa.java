@@ -26,5 +26,3 @@ public class Mesa implements Serializable {
     @Column(name="numero")
     private String numero;
 
-
-}
