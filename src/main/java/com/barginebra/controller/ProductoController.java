@@ -23,18 +23,18 @@ public class ProductoController {
         return productoService.obtenerProductos();
     }
 
-    @GetMapping("{idProducto}")
-    public ResponseEntity<Object> obtenerProducto(@PathVariable int idProducto){
-        return productoService.obtenerProducto(idProducto);
+    @GetMapping("{id}")
+    public ResponseEntity<Object> obtenerProducto(@PathVariable int id){
+        return productoService.obtenerProducto(id);
     }
 
-    @DeleteMapping("{idProducto}")
-    public ResponseEntity<Object> eliminarProducto(@PathVariable int idProducto){
+    @DeleteMapping()
+    public ResponseEntity<Object> eliminarProducto(@RequestParam int idProducto){
         return productoService.eliminarProducto(idProducto);
     }
 
     @PutMapping()
-    public ResponseEntity<Object> modificarProducto(@RequestBody Producto productoActualizado){
-        return productoService.modificarProducto(productoActualizado);
+    public ResponseEntity<Object> modificarProducto(@RequestParam Producto producto){
+        return productoService.modificarProducto(producto);
     }
 }
