@@ -26,5 +26,8 @@ public class Mesa implements Serializable {
     @Column(name="numero")
     private String numero;
 
+    @JoinColumn(name = "id-pedido")
+    @OneToMany
+    private List<Pedido> pedido;
 
 }

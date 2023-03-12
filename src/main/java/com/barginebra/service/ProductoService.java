@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import java.util.List;
@@ -94,12 +93,14 @@ public class ProductoService {
         return respuesta;
     }
 
-    public ResponseEntity<Object>eliminarProducto(@PathVariable int idProducto) {
+    public ResponseEntity<Object>eliminarProducto(@RequestParam int idProducto) {
         ResponseEntity<Object> respuesta;
         try {
-            productoDao.deleteById(idProducto);
             RespuestaPersonalizada res = new RespuestaPersonalizada("El producto fue eliminada correctamente", HttpStatus.OK);
+            Producto productoEliminar = this.productoDao.findById(idProducto).get(0);
+            productoDao.delete(productoEliminar);
             respuesta= ResponseEntity.ok(HttpStatus.OK);
+            respuesta = new ResponseEntity<>(res, HttpStatus.OK);
         } catch (Exception e) {
             RespuestaPersonalizada res = new RespuestaPersonalizada("Error al eliminar el producto ", HttpStatus.BAD_REQUEST);
             respuesta= ResponseEntity.ok(HttpStatus.BAD_REQUEST);

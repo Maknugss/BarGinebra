@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -96,7 +95,7 @@ public class MesaService {
         return respuesta;
     }
 
-    public ResponseEntity<Object>eliminarMesa(@PathVariable int idMesa) {
+    public ResponseEntity<Object>eliminarMesa(@RequestParam int idMesa) {
         ResponseEntity<Object> respuesta;
         try {
             RespuestaPersonalizada res = new RespuestaPersonalizada("La mesa fue eliminada correctamente", HttpStatus.OK);
