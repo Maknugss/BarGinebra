@@ -7,24 +7,21 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.List;
+
 
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(name="mesa")
-public class Mesa implements Serializable {
+@Table(name="tipo_pago")
+public class TipoPago implements Serializable {
 
     private static final long serialVersionUID = 1L;
-
     @Id
     @Column(name="id")
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private int id;
-    @Column(name="numero")
-    private String numero;
-
-
+    @Column(name="tipo")
+    private String tipo;
 }
