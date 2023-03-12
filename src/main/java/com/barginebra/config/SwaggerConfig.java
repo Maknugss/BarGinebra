@@ -27,7 +27,7 @@ public class SwaggerConfig {
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 .title("barginebra")
-                .description("API para la facuración de barginebra")
+                .description("API para la facturación de barginebra")
                 .version("1.0.0")
                 .build();
     }
