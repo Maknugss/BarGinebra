@@ -20,9 +20,9 @@ public class Mesa implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @Column(name="id")
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @Column(name="numero")
+    @Column(name = "numero")
     private String numero;
-
+}
