@@ -1,6 +1,9 @@
 package com.barginebra.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -8,6 +11,9 @@ import java.util.List;
 
 @Entity
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 @Table(name="usuario") //Creación de la tabla
 public class Usuario implements Serializable {
 
@@ -26,7 +32,7 @@ public class Usuario implements Serializable {
     @Column(name="apellidos")
     private String apellidos;
     @Column(name="documento")
-    private int documento;
+    private long documento;
     @Column(name="tipo_documento")
     private String tipo_documento;
     @JoinColumn(name = "id_tipo_usuario")
