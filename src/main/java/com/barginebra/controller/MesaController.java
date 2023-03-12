@@ -24,18 +24,18 @@ public class MesaController {
         return mesaService.obtenerTodasMesas();
     }
 
-    @GetMapping("{id}")
-    public ResponseEntity<Object> obtenerMesa(@PathVariable int id){
-        return mesaService.obtenerMesa(id);
+    @GetMapping("{idMesa}")
+    public ResponseEntity<Object> obtenerMesa(@PathVariable int idMesa){
+        return mesaService.obtenerMesa(idMesa);
     }
 
-    @DeleteMapping()
-    public ResponseEntity<Object> eliminarMesa(@RequestParam int idMesa){
+    @DeleteMapping("{idMesa}")
+    public ResponseEntity<Object> eliminarMesa(@PathVariable int idMesa){
         return mesaService.eliminarMesa(idMesa);
     }
 
     @PutMapping()
-    public ResponseEntity<Object> modificarMesa(@RequestParam Mesa mesa){
-        return mesaService.modificarMesa(mesa);
+    public ResponseEntity<Object> modificarMesa(@RequestBody Mesa mesaActualizada){
+        return mesaService.modificarMesa(mesaActualizada);
     }
 }
